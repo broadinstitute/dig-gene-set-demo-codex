@@ -1,0 +1,39 @@
+
+I am creating a directory/repo for a demo session using a gene set mcp server to display our data
+the users will check out this repo to use as a codex plugin
+make this demo directory/repository self-contained and give them either a one-command bootstrap or a prebuilt dev
+Put these in the demo directory:
+
+  README.md
+  AGENTS.md
+  .codex/
+    config.toml.example
+  .agents/
+    skills/
+      gene-set-provenance/
+        SKILL.md
+  .devcontainer/
+    devcontainer.json
+    Dockerfile
+  scripts/
+    setup-demo.sh
+    test-mcp.sh
+  examples/
+    prompts.md
+    expected-results.md
+
+the flow for the user will be:
+git clone https://github.com/YOUR-ORG/gene-set-codex-demo.git
+cd gene-set-codex-demo
+./setup-demo.sh
+codex
+
+add in a bootstrap script
+the mcp server is hosted remotely at translator.broadinstitute.org/gete-set-mcp/ and has the following properties:
+Streamable HTTP MCP server
+read-only tools
+bearer token auth with value 'change-me'
+rate limits
+
+I also want this demo to be runnable in github codespaces
+
