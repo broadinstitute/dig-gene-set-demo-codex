@@ -1,4 +1,26 @@
 
+
+
+- error test script
+I get the following error:
+mduby (main) CodexGeneSetExtractorDemo $ ./scripts/test-mcp.sh 
+[test-mcp] GET https://translator.broadinstitute.org/genetics_provider/mcp_geneset
+[test-mcp] HTTP 401
+[test-mcp] POST tools/list
+<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+the tool list POST address that works in postman is https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1
+
+
+- reaffirm mcp server
+the mcp server address is https://translator.broadinstitute.org/genetics_provider/mcp_geneset, although it might change later
+
+
+- create repo
 I am creating a directory/repo for a demo session using a gene set mcp server to display our data
 the users will check out this repo to use as a codex plugin
 make this demo directory/repository self-contained and give them either a one-command bootstrap or a prebuilt dev

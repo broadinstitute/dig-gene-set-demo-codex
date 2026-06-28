@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GENE_SET_MCP_URL="${GENE_SET_MCP_URL:-https://translator.broadinstitute.org/genetics_provider/mcp_geneset}"
+GENE_SET_MCP_URL="${GENE_SET_MCP_URL:-https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1}"
 GENE_SET_MCP_BEARER_TOKEN="${GENE_SET_MCP_BEARER_TOKEN:-change-me}"
 
 echo "[test-mcp] GET ${GENE_SET_MCP_URL}"
