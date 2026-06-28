@@ -1,0 +1,23 @@
+{
+  "name": "gene-set-codex-demo",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "GENE_SET_MCP_URL": "https://translator.broadinstitute.org/genetics_provider/mcp_geneset",
+    "GENE_SET_MCP_BEARER_TOKEN": "change-me"
+  },
+  "postCreateCommand": "bash ./setup-demo.sh --skip-install",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "github.copilot",
+        "github.copilot-chat"
+      ]
+    }
+  }
+}

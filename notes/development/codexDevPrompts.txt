@@ -2,6 +2,7 @@
 I am creating a directory/repo for a demo session using a gene set mcp server to display our data
 the users will check out this repo to use as a codex plugin
 make this demo directory/repository self-contained and give them either a one-command bootstrap or a prebuilt dev
+the mc server address is https://translator.broadinstitute.org/genetics_provider/mcp_geneset
 Put these in the demo directory:
 
   README.md

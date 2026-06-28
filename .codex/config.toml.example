@@ -1,0 +1,5 @@
+model = "gpt-5.4"
+
+[mcp_servers.gene-set-demo]
+url = "https://translator.broadinstitute.org/genetics_provider/mcp_geneset"
+bearer_token_env_var = "GENE_SET_MCP_BEARER_TOKEN"

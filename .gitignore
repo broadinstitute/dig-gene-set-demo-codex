@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local Codex demo state
+.codex/config.toml
+.codex/README.local.md
