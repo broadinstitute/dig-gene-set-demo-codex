@@ -1,3 +1,8 @@
+---
+name: gene-set-provenance
+description: Use this skill for gene set provenance, source datasets, gene membership, overlap searches, graph neighborhoods, and evidence-backed interpretation from the gene set MCP server.
+---
+
 # gene-set-provenance
 
 Use this skill when the user asks about gene set provenance, source datasets, gene membership, overlap, graph neighborhoods, or evidence behind a gene set.

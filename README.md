@@ -4,7 +4,7 @@ This repository is a self-contained demo workspace for using Codex with a remote
 
 The demo targets this streamable HTTP MCP endpoint:
 
-- `https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1`
+- `https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp`
 
 Server assumptions baked into this repo:
 
@@ -54,7 +54,7 @@ It maps to the following Codex config shape:
 
 ```toml
 [mcp_servers.gene-set-demo]
-url = "https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1"
+url = "https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp"
 bearer_token_env_var = "GENE_SET_MCP_BEARER_TOKEN"
 ```
 
@@ -63,7 +63,7 @@ The repo includes that snippet in [.codex/config.toml.example](/Users/mduby/Code
 ## Environment Variables
 
 - `GENE_SET_MCP_URL`
-  Default: `https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1`
+  Default: `https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp`
 - `GENE_SET_MCP_BEARER_TOKEN`
   Default demo value: `change-me`
 
@@ -71,7 +71,7 @@ You can override either before running setup:
 
 ```bash
 export GENE_SET_MCP_BEARER_TOKEN="change-me"
-export GENE_SET_MCP_URL="https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1"
+export GENE_SET_MCP_URL="https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp"
 ./setup-demo.sh
 ```
 
@@ -98,8 +98,10 @@ Open the repo in Codespaces and the devcontainer will:
 
 After the Codespace is ready:
 
+ - enable `Enable device code authorization for Codex` in you Gpt Account/Setting/Security amd login
+
 ```bash
-codex login
+codex login --device-auth
 codex
 ```
 
@@ -112,5 +114,5 @@ If you need to re-run setup inside Codespaces:
 ## Notes
 
 - The remote service is rate-limited. Keep prompts focused and avoid unnecessary repeated tool calls.
-- The base application URL may return `401` or other non-tool responses. The working MCP transport URL for this demo is `genetics_provider/mcp_geneset/mcp?stream=1`.
+- The base application URL may return `401` or other non-tool responses. The Codex MCP URL for this demo is `genetics_provider/mcp_geneset/mcp`.
 - If your environment uses a different host path later, set `GENE_SET_MCP_URL` before bootstrap.

@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MCP_NAME="${MCP_NAME:-gene-set-demo}"
-GENE_SET_MCP_URL="${GENE_SET_MCP_URL:-https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1}"
+GENE_SET_MCP_URL="${GENE_SET_MCP_URL:-https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp}"
 GENE_SET_MCP_BEARER_TOKEN="${GENE_SET_MCP_BEARER_TOKEN:-change-me}"
 TOKEN_ENV_VAR="GENE_SET_MCP_BEARER_TOKEN"
 CODEX_HOME_DIR="${CODEX_HOME:-$HOME/.codex}"
