@@ -6,4 +6,4 @@ RUN apt-get update \
 
 RUN npm install -g @openai/codex
 
-WORKDIR /workspaces/gene-set-codex-demo
+WORKDIR /workspaces

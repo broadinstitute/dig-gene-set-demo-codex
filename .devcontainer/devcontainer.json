@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "containerEnv": {
     "GENE_SET_MCP_URL": "https://translator.broadinstitute.org/genetics_provider/mcp_geneset/mcp?stream=1",
     "GENE_SET_MCP_BEARER_TOKEN": "change-me"
