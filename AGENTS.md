@@ -18,6 +18,7 @@ This repository is a demo workspace for Codex users connecting to a remote gene 
 - Transport: streamable HTTP
 - Auth: bearer token from `GENE_SET_MCP_BEARER_TOKEN`
 - Data access is read-only
+- `get_pigean_gene_set` should be called with the resolved gene set `standard_name`
 
 ## Response Style
 

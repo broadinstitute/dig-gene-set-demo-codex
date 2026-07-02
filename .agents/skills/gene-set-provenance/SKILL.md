@@ -20,7 +20,7 @@ Use this skill when the user asks about gene set provenance, source datasets, ge
 2. `get_gene_set`
    Use after identifying the target gene set.
 3. `get_pigean_gene_set`
-   Use after identifying a gene set when the user wants phenotype associations for that gene set.
+   Use after identifying a gene set when the user wants phenotype associations for that gene set; query it by resolved gene set `standard_name`.
 4. `get_provenance`
    Use for provenance graph and source metadata.
 5. `find_gene_sets_by_gene`
@@ -34,7 +34,7 @@ Use this skill when the user asks about gene set provenance, source datasets, ge
 
 1. Resolve the exact gene set identifier or standard name.
 2. Fetch the gene set itself before discussing provenance.
-3. If phenotype-association context is relevant, fetch Pigean associations for the resolved gene set.
+3. If phenotype-association context is relevant, fetch Pigean associations for the resolved gene set using its `standard_name`.
 4. Fetch provenance separately and distinguish:
    - core gene set fields
    - Pigean phenotype associations
@@ -48,6 +48,7 @@ Use this skill when the user asks about gene set provenance, source datasets, ge
 
 - `Gene set`: standard name, identifier, organism, library if present
 - `Pigean gene set associations`: phenotype, beta, beta_uncorrected, rs_score if returned
+  Query key: resolved gene set `standard_name`
 - `Provenance`: source dataset, method, contrast, tissue, pipeline, or other linked entities if returned
 - `Pigean gene associations`: phenotype, phenotype_name, combined, label if returned
 - `Evidence`: direct fields returned by the server

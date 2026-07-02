@@ -1,5 +1,11 @@
 
 
+- 20260702 - pigean gene set search error by id
+update the ageent to query to use the following tool as described, which is search by gene set standard name
+
+"name": "get_pigean_gene_set",
+"description": "Fetch Pigean phenotype associations for a gene set standard_name and return phenotype, beta, beta_uncorrected, and rs_score.",
+
 
 - error test script
 I get the following error:
