@@ -1,0 +1,227 @@
+
+
+codex ignore this file
+
+
+- 20260701 - update skill for using bioindex calls
+
+update the agent to use the following tools from the mcp server, in the following order if applicable
+
+"name": "search_gene_sets",
+"description": "Search gene sets by standard_name with optional organism and library filters.",
+
+"name": "get_gene_set",
+"description": "Retrieve a gene set by gene_set_id or standard_name, optionally including genes.",
+
+"name": "get_pigean_gene_set",
+"description": "Fetch Pigean phenotype associations for a gene set id and return phenotype, beta, beta_uncorrected, and rs_score.",
+
+"name": "get_provenance",
+"description": "Return compacted provenance_graph and geneset_metadata for a gene set.",
+
+"name": "find_gene_sets_by_gene",
+"description": "Find gene sets that overlap a provided list of gene symbols.",
+
+"name": "get_pigean_gene",
+"description": "Fetch Pigean phenotype associations for a gene and return phenotype, phenotype_name, combined, and label.",
+
+"name": "get_graph_neighborhood",
+"description": "Return a bounded neighborhood around a gene set, gene, dataset, tissue, contrast, trait, disease, provenance, or pipeline node.",
+
+
+
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "tools": [
+            {
+                "name": "search_gene_sets",
+                "description": "Search gene sets by standard_name with optional organism and library filters.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string"
+                        },
+                        "organism": {
+                            "type": "string"
+                        },
+                        "library": {
+                            "type": "string"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 25
+                        }
+                    },
+                    "required": [
+                        "query"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "search_gene_sets_semantic",
+                "description": "Proxy semantic gene set search to the configured remote service and return label, description, and score.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                        }
+                    },
+                    "required": [
+                        "query"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "get_gene_set",
+                "description": "Retrieve a gene set by gene_set_id or standard_name, optionally including genes.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "gene_set_id": {
+                            "type": "integer"
+                        },
+                        "standard_name": {
+                            "type": "string"
+                        },
+                        "include_genes": {
+                            "type": "boolean"
+                        },
+                        "max_genes": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 200
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "get_pigean_gene_set",
+                "description": "Fetch Pigean phenotype associations for a gene set id and return phenotype, beta, beta_uncorrected, and rs_score.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "gene_set_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "gene_set_id"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "get_pigean_gene",
+                "description": "Fetch Pigean phenotype associations for a gene and return phenotype, phenotype_name, combined, and label.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "gene": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "gene"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "get_provenance",
+                "description": "Return compacted provenance_graph and geneset_metadata for a gene set.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "gene_set_id": {
+                            "type": "integer"
+                        },
+                        "standard_name": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "find_gene_sets_by_gene",
+                "description": "Find gene sets that overlap a provided list of gene symbols.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "genes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
+                        },
+                        "organism": {
+                            "type": "string"
+                        },
+                        "library": {
+                            "type": "string"
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 25
+                        }
+                    },
+                    "required": [
+                        "genes"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            {
+                "name": "get_graph_neighborhood",
+                "description": "Return a bounded neighborhood around a gene set, gene, dataset, tissue, contrast, trait, disease, provenance, or pipeline node.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "node_type": {
+                            "type": "string"
+                        },
+                        "node_id": {
+                            "type": "string"
+                        },
+                        "max_nodes": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 50
+                        },
+                        "max_edges": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                        },
+                        "include_genes": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "node_type",
+                        "node_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        ]
+    }
+}
+
+
+
